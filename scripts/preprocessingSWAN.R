@@ -1,0 +1,60 @@
+###########################################################################################################################
+# Author: Rebekka Koeck
+# Lab: Cellular Genomic Medicine, Clinical Genetics, Maastricht University (Medical Centre +)
+
+# script purpose: preprocessing of raw .idat files using RnBeads
+
+# input: .idat files from each run (1 or 2) processed separately, associated sample sheets (.csv)
+
+# output:  methylation beta value per site per sample (format: .csv)
+
+###########################################################################################################################
+
+#attach libraries
+suppressPackageStartupMessages(library(RnBeads))
+
+#set up parallel processing
+num.cores <- 16
+parallel.setup(num.cores)
+
+#set file directories
+idat.dir <- DataFilePath
+sample.annotation <- AnnotationFilePath.csv
+report.dir <- OutputFilePath
+
+#name the Cohort
+Cohort = "miscarriage_methylation"
+
+#set the options for RnBeads
+
+rnb.options(analysis.name = "miscarrMeth_SWAN", #name the analysis
+            logging = TRUE, #creates a log in the automatic run of the pipeline
+            assembly = "hg19", #assembly genome
+            analyze.sites = TRUE, #analyse per site/probe - always done for preprocessing steps
+            identifiers.column = "Sample_Name", # column name in table of phenotype information to use as sample identifiers otherwise rownames
+            gz.large.files = TRUE, #large files should be compressed
+            import = TRUE, #carry out import module, only false if using previous RnBSet
+            import.sex.prediction = TRUE, #does sex prediction when data is imported
+            qc = TRUE, # QC module carried out
+            preprocessing = TRUE, #preprocessing steps are completed
+            normalization = TRUE, #normalisation is never carried out on sequencing data
+            normalization.method = "swan", #select normalisation method
+            normalization.background.method = "methylumi.noob", #no background normalisation is carried out
+            filtering.context.removal = c("CC", "CAG", "CAH", "CTG", "CTG"), #only retain CpG probes
+            filtering.snp = "any", #remove all probes that overlap with SNPs
+            filtering.greedycut = TRUE, #run greedycut filtering to remove low quality probes and samples
+            filtering.sex.chromosomes.removal = TRUE, #all probes on sex chromosomes are removed
+            filtering.missing.value.quantile = 0.1, # proportion of samples that must have value for probe for it to be included
+            imputation.method = "none", #no imputation to be carried out,
+            inference = FALSE, #no covariate inference to be done
+            exploratory = FALSE, #carry out some steps of the exploratory module
+            differential = FALSE, #differential module not to be carried out,
+            export.to.bed = FALSE, #export data to bed file
+            export.to.trackhub = NULL, #disable export to trackhub (disc full??)
+            export.to.csv = TRUE #methylation values are exported to csv files
+)
+
+options(fftempdir= analysis.dir)
+options(ffcaching="ffeachflush")
+
+rnb.run.analysis(dir.reports=report.dir, sample.sheet=sample.annotation,data.dir=idat.dir, data.type="infinium.idat.dir")
