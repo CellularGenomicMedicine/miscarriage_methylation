@@ -1,5 +1,5 @@
 # miscarriage_methylation
-Methylation analysis of EM and CV samples for cell composition to determine whether the sampled tissue types are distinct and whether they correspond to the expected cell sample types.
+Methylation analysis of EM and CV samples from first trimester pregnancy loss to conduct cell composition deconvolution and to determine whether the sampled tissue types are distinct and whether they correspond to the expected cell sample types.
 
 ## Pre-processing & sample QC
 1. [SWAN normalisation and sample / site QC](scripts/preprocessingSWAN.R)
@@ -8,11 +8,24 @@ Methylation analysis of EM and CV samples for cell composition to determine whet
     + [sex prediction using sEst](scripts/sexPrediction.R)
     + [visualisation of the predicted sample sexes](scripts/sexPredictionVisualisation)
     
-## [PCA to assess sample similarity](scripts/)
+## Principal component analysis
+
+1. [Calculation of principal components](scripts/)
     + [association of PCs with sample characteristics & heatmap visualisation](scripts/)
   
-  
-## [Preprocessing for cell composition prediction (MethylumiNoob method)](scripts/01preprocessingMinfiNoob)
+## Cell composition deconvolution
+
+1. [Preprocessing for cell composition prediction (MethylumiNoob method)](scripts/preprocessingMinfiNoob)
+    + [placental lineage cell composition prediction](scripts/)
     + [visualisation of the results](scripts/)
+
+## Lineage-specific methylation characterisation
+[Additional scripts](otherScripts/) to look at methylation features that are specific to placental / fetal lineages are provided. Supporting data required for these analysis can be found [here](supportingData).
+
+## References
+Reference datasets were obtained from the following publications:
+
+
+
 
 
