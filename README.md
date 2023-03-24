@@ -10,8 +10,8 @@ Methylation analysis of EM and CV samples from first trimester pregnancy loss to
     
 ## Principal component analysis
 
-1. [Calculation of principal components](scripts/)
-    + [association of PCs with sample characteristics & heatmap visualisation](scripts/)
+1. [Calculation of principal components](scripts/principalComponentAnalysis.R)
+    + association of PCs with sample characteristics & heatmap visualisation
   
 ## Cell composition deconvolution
 
