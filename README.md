@@ -1,5 +1,5 @@
 # miscarriage_methylation
-Methylation analysis of EM and CV samples from first trimester pregnancy loss to conduct cell composition deconvolution and to determine whether the sampled tissue types are distinct and whether they correspond to the expected cell sample types.
+Methylation analysis of EM and CV samples from first trimester pregnancy loss to conduct cell composition deconvolution and to determine whether the sampled tissue types are distinct and whether they correspond to the expected cell sample types. The methylome analyses were carried out on data generated using the EPIC array.
 
 ## Pre-processing & sample QC
 1. [SWAN normalisation and sample / site QC](scripts/preprocessingSWAN.R)
@@ -20,7 +20,11 @@ Methylation analysis of EM and CV samples from first trimester pregnancy loss to
     + [visualisation of the results](scripts/cellCompositionVisualisation.R)
 
 ## Lineage-specific methylation characterisation
-[Additional scripts](otherScripts/) to look at methylation features that are specific to placental / fetal lineages are provided. Supporting data required for these analysis can be found [here](supportingData).
+[Additional scripts](otherScripts/) to look at methylation features that are specific to placental / fetal lineages are provided. Supporting data required for these analysis can be found [here](supportingData). The supporting data is as follows:
+1. EPIC sites required for cell deconvolution of first trimester placental samples (Yuan et al.)
+2. EPIC sites within repetitive Line1 and Alu regions
+3. EPIC sites within placenta-specific and generic imprinted regions
+4. EPIC sites within placenta-specific partially methylated domains
 
 ## References
 Reference datasets were obtained from the following publications:
