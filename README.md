@@ -4,7 +4,7 @@ Methylation analysis of EM and CV samples from first trimester pregnancy loss to
 ## Pre-processing & sample QC
 1. [SWAN normalisation and sample / site QC](scripts/preprocessingSWAN.R)
     (the SNP heatmap can be extracted from the generated RnBeads output) 
-2. [Raw beta value and detection p-value extraction](scripts/preprocessingSEst.R)
+2. [Raw beta value and detection p-value extraction](scripts/preprocessingsEst.R)
     + [sex prediction using sEst](scripts/sexPrediction.R)
     + [visualisation of the predicted sample sexes](scripts/sexPredictionVisualisation.R)
     
