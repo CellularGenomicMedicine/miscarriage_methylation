@@ -3,9 +3,9 @@ Methylation analysis of EM and CV samples for cell composition to determine whet
 
 ## Pre-processing & sample QC
 1. [SWAN normalisation and sample / site QC](scripts/preprocessingSWAN.R)
-    The SNP heatmap can be extracted from the generated RnBeads output
+    (the SNP heatmap can be extracted from the generated RnBeads output) 
 2. [Raw beta value and detection p-value extraction](scripts/preprocessingSEst)
-    + [sex prediction using Sest](scripts/sexPrediction.R)
+    + [sex prediction using sEst](scripts/sexPrediction.R)
     + [visualisation of the predicted sample sexes](scripts/sexPredictionVisualisation)
     
 ## [PCA to assess sample similarity](scripts/)
