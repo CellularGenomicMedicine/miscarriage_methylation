@@ -16,7 +16,7 @@ Methylation analysis of EM and CV samples from first trimester pregnancy loss to
 ## Cell composition deconvolution
 
 1. [Preprocessing for cell composition prediction (MethylumiNoob method)](scripts/preprocessingMinfiNoob)
-    + [placental lineage cell composition prediction](scripts/)
+    + [placental lineage cell composition prediction](scripts/cellDeconvolution.R)
     + [visualisation of the results](scripts/)
 
 ## Lineage-specific methylation characterisation
