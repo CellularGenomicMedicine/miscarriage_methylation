@@ -27,7 +27,8 @@ Methylation analysis of EM and CV samples from first trimester pregnancy loss to
 4. EPIC sites within placenta-specific partially methylated domains
 
 ## References
-Reference datasets were obtained from the following publications:
+1. Yuan, V., Hui, D., Yin, Y. et al. Cell-specific characterization of the placental methylome. BMC Genomics 22, 6 (2021). https://doi.org/10.1186/s12864-020-07186-6
+2. Schroeder DI, Blair JD, Lott P, Yu HOK, Hong D, Crary F, et al. The human placenta methylome. Proc Natl Acad Sci. 2013;110(15):6037–42
 
 
 
